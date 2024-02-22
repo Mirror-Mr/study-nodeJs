@@ -1,0 +1,14 @@
+{
+  "name":"xiulei-utils",
+  "version":"1.0.0",
+  "main":"index.js",
+  "description": "修雷的npm工具包",
+  "keywords": [
+    "xiulei",
+    "date",
+    "dateFormat",
+    "escape",
+    "htmlEscape"
+  ],
+  "license":"ISC"
+}
