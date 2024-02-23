@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-// express.static('指定静态资源存放的根目录 相对路径') 对外提供静态资源
+// express.static('指定静态资源存放的根目录 相对路径(也可是绝对路径)') 对外提供静态资源
 app.use(express.static('./clock'))
 // 存放静态资源的目录名默认不会出现在url中
 // 可通过 http://127.0.0.1/index.html 访问clock目录下的index.html文件
