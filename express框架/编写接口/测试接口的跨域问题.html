@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="get">发送get请求</button>
+    <button id="post">发送post请求</button>
+    <script>
+        /**
+         *  在浏览器打开该文件时，使用的是file协议，发送http请求时会出现接口跨域的问题
+         *  可在服务端配置CORS跨域资源共享的方式，来解决该问题
+         */
+        
+        $(function(){
+            $('#get').on('click',()=>{
+                $.ajax({
+                    type:'get',
+                    url:'http://127.0.0.1:80/api/get',
+                    data:{
+                        name:'魈',
+                        love:'me'
+                    },
+                    success:(res)=>{
+                        console.log(res)
+                    }
+                })
+            })
+            $('#post').on('click',()=>{
+                $.ajax({
+                    type:'post',
+                    url:'http://127.0.0.1:80/api/post',
+                    data:{
+                        name:'爱魈魈',
+                        love:'me'
+                    },
+                    success:(res)=>{
+                        console.log(res)
+                    }
+                })
+            })
+            
+        })
+    </script>
+</body>
+</html>
