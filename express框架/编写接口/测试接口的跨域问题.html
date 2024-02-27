@@ -10,6 +10,8 @@
 <body>
     <button id="get">发送get请求</button>
     <button id="post">发送post请求</button>
+    <button id="delete">发送delete请求</button>
+    <button id="jsonp">发送jsonp请求</button>
     <script>
         /**
          *  在浏览器打开该文件时，使用的是file协议，发送http请求时会出现接口跨域的问题
@@ -22,7 +24,7 @@
                     type:'get',
                     url:'http://127.0.0.1:80/api/get',
                     data:{
-                        name:'魈',
+                        name:'baby魈',
                         love:'me'
                     },
                     success:(res)=>{
@@ -39,6 +41,31 @@
                         love:'me'
                     },
                     success:(res)=>{
+                        console.log(res)
+                    }
+                })
+            })
+            // 发送预检请求 使用谷歌浏览器看不出看来 用别的测
+            $('#delete').on('click',()=>{
+                $.ajax({
+                    type:'delete',
+                    url:'http://127.0.0.1:80/api/delete',
+                    data:{
+                        name:'魈爱爱',
+                        love:'me'
+                    },
+                    success:(res)=>{
+                        console.log(res)
+                    }
+                })
+            })
+            // 模拟jsonp方式的请求 只能是get类型的
+            $('#jsonp').on('click',()=>{
+                $.ajax({
+                    type: 'get',
+                    url: 'http://127.0.0.1:80/api/jsonp',
+                    dataType: 'jsonp', // 表示要发起jsonp请求
+                    success: (res)=>{
                         console.log(res)
                     }
                 })

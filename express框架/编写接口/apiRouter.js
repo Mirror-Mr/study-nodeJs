@@ -26,4 +26,15 @@ apiRouter.post('/post', (req, res) => {
     });
 })
 
+// 挂载DELETE路由
+// 需先进行预检请求，服务器成功响应预检请求后，才会发送真正的请求，并且携带真实数据
+apiRouter.delete('/delete', (req, res) => {
+    res.send({
+        status: 0, // 状态，0表成功，1表失败
+        msg: 'DELETE请求成功', // 状态描述
+    });
+})
+
+
+
 module.exports = apiRouter;
